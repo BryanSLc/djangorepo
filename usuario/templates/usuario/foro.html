@@ -1,0 +1,85 @@
+{% load l10n %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Foro de comentarios</title>
+    <link rel="stylesheet" href="{% static 'styles05.css' %}">
+    <link rel="shortcut icon" href="{% static 'logo.png' %}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+</head>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="{% url 'inicio' %}">
+                <img src="{% static 'logo.png' %}" alt="Logo">
+            </a>
+        </div>
+    
+        <div class="menu">
+            <nav>
+                <a href="{% url 'home' %}">Inicio</a>
+                <a href="{% url 'catalogos' %}">Catalogo</a>
+                <a href="{% url 'categorias_por_calificacion' %}">Clasificacion</a>
+                <a href="{% url 'reciente' %}">Reciente</a>
+                <a href="#">Foro</a>
+            </nav>
+        </div>
+    
+        <div class="search-bar">
+            <img src="{% static 'buscar.jpg' %}" alt="">
+            <input type="text" placeholder="Buscar...">
+        </div>
+    
+        <div class="perfil">
+            <a href="{% url 'perfil' %}" class="perfil-button">Perfil</a>
+            <a href="{% url 'logout' %}" class="perfil-button">Cerrar sesion</a>
+        </div>
+    </header>
+
+    <div class="forocomentarios">
+        <h1>Foro</h1>
+        <p>De sus opiniones sobre los servicios que ofrece nuestra página. Por favor respete las opiniones de los demás.</p>
+        <form method="post" class="comentario-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn-enviar">Enviar</button>
+        </form>
+
+        <h2>Comentarios:</h2>
+        <div class="comentarios-lista">
+            {% for comentario in comentarios %}
+                <div class="comentario">
+                    <h3>{{ comentario.titulo }}</h3>
+                    <p class="comentario-usuario">{{ comentario.usuario.nombre }}: <span class="comentario-contenido">{{ comentario.contenido }}</span></p>
+                    <p class="comentario-fecha"><small>{% localize on %}{{ comentario.fecha_creacion|date:"d M Y, H:i"  }}{% endlocalize %}</small></p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <footer>
+        <div class="copyright">
+            <img src="{% static 'copyright.jpg' %}" alt="">
+            <p> 2024 Entertaiment</p>
+        </div>
+        <div class="info">
+            <p>Nuestra pagina web brinda a todos los usuarios contenido en
+                linea del mundo del entretenimiento.
+            </p>
+        </div>
+
+        <div class="redes">
+            <p>Visita nuestras redes sociales.</p>
+            <ul>
+                <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                <li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

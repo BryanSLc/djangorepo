@@ -1,0 +1,186 @@
+body {
+    font-family: 'Roboto';
+    margin: 0;
+    padding: 0;
+    background-color: #e6f0f3;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-bottom: 2px solid #000000;
+}
+
+header .logo img {
+    width: 50px;
+}
+
+header .menu {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+header nav {
+    display: flex;
+    gap: 15px; 
+}
+
+header nav a {
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+}
+
+header .search-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header .search-bar input[type="text"]{
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    margin-right: 300px;
+    display: flex;
+}
+
+header .search-bar img{
+    width: 24px;
+    padding-left: 100px;
+    margin-left: 10px;
+}
+
+.perfil{
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 10px;
+}
+
+.perfil-button{
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #000000;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.perfill {
+    background-color: #f9f9f9;  /* Color de fondo suave */
+    border: 1px solid #ddd;     /* Borde gris claro */
+    border-radius: 8px;         /* Bordes redondeados */
+    padding: 20px;              /* Espaciado interno */
+    max-width: 600px;           /* Ancho máximo */
+    margin: 20px auto;          /* Centrado horizontal y margen vertical */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  /* Sombra ligera */
+}
+
+.perfill h1 {
+    font-size: 24px;            /* Tamaño de fuente grande */
+    color: #333;                /* Color de texto */
+    margin-bottom: 10px;        /* Margen inferior */
+}
+
+.perfill p {
+    font-size: 16px;            /* Tamaño de fuente mediano */
+    color: #555;                /* Color de texto gris */
+    margin-bottom: 8px;         /* Margen inferior */
+}
+
+.perfill h2 {
+    font-size: 20px;            /* Tamaño de fuente */
+    color: #333;                /* Color de texto */
+    margin-top: 20px;           /* Margen superior */
+    margin-bottom: 10px;        /* Margen inferior */
+}
+
+.perfill form {
+    margin-bottom: 20px;        /* Margen inferior */
+}
+
+.perfill .btn-mostrar-form, .perfil .btn-cambiar-nombre {
+    background-color: #007bff;  /* Color de fondo del botón */
+    color: white;               /* Color del texto del botón */
+    border: none;               /* Sin borde */
+    border-radius: 4px;         /* Bordes redondeados */
+    padding: 10px 20px;         /* Relleno del botón */
+    font-size: 16px;            /* Tamaño de fuente */
+    cursor: pointer;            /* Cursor de mano al pasar sobre el botón */
+    margin-top: 10px;           /* Margen superior */
+}
+
+.perfill .btn-mostrar-form:hover, .perfil .btn-cambiar-nombre:hover {
+    background-color: #0056b3;  /* Color de fondo del botón al pasar el cursor */
+}
+
+.perfill .messages {
+    list-style-type: none;      /* Sin puntos de lista */
+    padding: 0;                 /* Sin relleno */
+    margin: 20px 0;             /* Márgenes verticales */
+}
+
+.perfill .messages li {
+    background-color: #dff0d8;  /* Color de fondo del mensaje */
+    color: #3c763d;             /* Color del texto del mensaje */
+    border: 1px solid #d6e9c6;  /* Borde del mensaje */
+    border-radius: 4px;         /* Bordes redondeados */
+    padding: 10px;              /* Relleno del mensaje */
+    margin-bottom: 10px;        /* Margen inferior */
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px 0;
+    text-align: center;
+    background-color: #000;
+    color: #ffffff;
+}
+
+footer div {
+    flex: 1;
+    padding: 10px;
+}
+
+footer .copyright {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer .copyright img {
+    width: 20px;
+    margin-right: 8px;
+}
+
+footer .redes p{
+    padding: 10px;
+}
+
+footer .redes ul{
+    list-style: none;
+    padding: 50;
+    display: flex;
+    gap: 25px;
+}
+
+footer .redes ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    margin: 20px;
+}

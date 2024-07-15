@@ -1,0 +1,440 @@
+body {
+    font-family: 'Roboto';
+    margin: 0;
+    padding: 0;
+    background-color: #e6f0f3;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-bottom: 2px solid #000000;
+}
+
+header .logo img {
+    width: 50px;
+}
+
+header .menu {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+header nav {
+    display: flex;
+    gap: 15px; 
+}
+
+header nav a {
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+}
+
+header .search-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header .search-bar input[type="text"]{
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    margin-right: 300px;
+    display: flex;
+}
+
+header .search-bar img{
+    width: 24px;
+    padding-left: 100px;
+    margin-left: 10px;
+}
+
+.login {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 10px;
+}
+
+.login-button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #000000;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #000000;
+}
+
+.perfil{
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 10px;
+}
+
+.perfil-button{
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #000000;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.content {
+    padding: 20px;
+    text-align: center;
+}
+
+.catalogo-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 30px;
+}
+
+.catalogo-card {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: left;
+}
+
+.catalogo-card h2 {
+    margin-top: 0;
+    color: #007973b9;
+}
+
+.catalogo-card p {
+    margin: 5px 0;
+}
+
+.catalogo-card .btn {
+    display: inline-block;
+    padding: 10px 15px;
+    margin-top: 10px;
+    color: rgb(255, 255, 255);
+    background-color: #165153;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.catalogo-card .btn:hover {
+    background-color: #004d40;
+}
+
+.detalles-card {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.detalles-card p {
+    margin: 0 0 10px;
+}
+
+.detalles-sinopsis {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.detalles-sinopsis h2 {
+    margin-top: 0;
+    color: #00796b;
+}
+
+.detalles-sinopsis ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.detalles-sinopsis li {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px 0;
+    text-align: center;
+    background-color: #000;
+    color: #ffffff;
+}
+
+footer div {
+    flex: 1;
+    padding: 10px;
+}
+
+footer .copyright {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer .copyright img {
+    width: 20px;
+    margin-right: 8px;
+}
+
+footer .redes p{
+    padding: 10px;
+}
+
+footer .redes ul{
+    list-style: none;
+    padding: 50;
+    display: flex;
+    gap: 25px;
+}
+
+footer .redes ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    margin: 20px;
+}
+
+@media (max-width: 768px) {
+    header, footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav {
+        margin-top: 10px;
+    }
+
+    header .login {
+        margin-top: 10px;
+    }
+}
+
+/* Estilos para la sección de calificaciones */
+.calificaciones {
+    margin-top: 30px;
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.calificaciones h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #00796b; /* Color verde para el título de calificaciones */
+}
+
+.calificaciones p {
+    margin-bottom: 10px;
+}
+
+.calificaciones ul {
+    padding: 0;
+    list-style: none;
+}
+
+.calificaciones ul li {
+    border: 1px solid #ccc; /* Borde gris para cada calificación */
+    border-radius: 5px; /* Esquinas redondeadas */
+    background-color: #f9f9f9; /* Fondo gris claro */
+    margin-bottom: 20px; /* Espacio entre calificaciones */
+    padding: 15px; /* Espaciado interno */
+}
+
+.calificaciones ul li p {
+    margin-bottom: 5px;
+    text-align: left; /* Alinea el texto de la calificación a la izquierda */
+}
+
+.calificaciones ul li small {
+    color: #888;
+}
+
+/* Estilos para el formulario de comentarios */
+
+.detalles-catalogo {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.calificacion-promedio {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+}
+
+.promedio {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.recuento-estrellas {
+    margin: 20px 0;
+    font-size: 18px;
+}
+
+.recuento-estrellas div {
+    margin: 5px 0;
+}
+
+h2 {
+    margin-top: 30px;
+    color: #00796b; /* Color verde para el título de comentarios */
+}
+
+form {
+    margin-top: 20px;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+    min-height: 100px;
+}
+
+.calificacion {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.estrellas {
+    display: flex;
+    direction: row-reverse;
+}
+
+.estrellas input[type="radio"] {
+    display: none;
+}
+
+.estrellas label {
+    font-size: 24px;
+    color: #ccc;
+    cursor: pointer;
+}
+
+.estrellas label:hover,
+.estrellas label:hover ~ label,
+.estrellas input[type="radio"]:checked ~ label {
+    color: #ffdd00;
+}
+
+button {
+    margin-top: 10px;
+    background-color: #00796b; /* Color verde oscuro para el botón de enviar comentario */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #004d40; /* Color verde más oscuro al pasar el mouse */
+}
+
+.comentarios ul {
+    padding: 0;
+    list-style: none;
+}
+
+.comentarios ul li {
+    border: 1px solid #ccc; /* Borde gris para cada comentario */
+    border-radius: 5px; /* Esquinas redondeadas */
+    background-color: #f9f9f9; /* Fondo gris claro */
+    margin-bottom: 20px; /* Espacio entre comentarios */
+    padding: 15px; /* Espaciado interno */
+}
+
+.comentario-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.comentario-header span {
+    font-weight: bold;
+}
+
+.comentario-header .estrellas {
+    font-size: 18px;
+    color: #ffdd00;
+}
+
+.comentario-header .estrellas span.filled {
+    color: #ffdd00;
+}
+
+.comentario-header .fecha {
+    font-size: 12px;
+    color: #888;
+}
+
+
+/* Estilos para los elementos de la lista del historial */
+.content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.content ul li {
+    background-color: #f0f0f0; /* Fondo gris claro */
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.content ul li a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.content ul li span {
+    color: #888;
+    font-size: 12px;
+    margin-left: 10px;
+}

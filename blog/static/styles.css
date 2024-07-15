@@ -1,0 +1,205 @@
+body {
+    font-family: 'Roboto';
+    margin: 0;
+    padding: 0;
+    background-color: #e6f0f3;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-bottom: 2px solid #000000;
+}
+
+header .logo img {
+    width: 50px;
+}
+
+header .menu {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+header nav {
+    display: flex;
+    gap: 15px; 
+}
+
+header nav a {
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+}
+
+header .search-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header .search-bar input[type="text"]{
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    margin-right: 300px;
+    display: flex;
+}
+
+header .search-bar img{
+    width: 24px;
+    padding-left: 100px;
+    margin-left: 10px;
+}
+
+.login {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 10px;
+}
+
+.login-button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #000000;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #000000;
+}
+
+.contenido {
+    padding: 20px;
+    background-color: white;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contenido h1 {
+    color: #333;
+    font-size: 2em;
+}
+
+.contenido p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.publicacion{
+    display: flex;
+    margin: 50px;
+}
+
+.publicacion div{
+    padding: 10px;
+}
+
+.clasificaciones {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    flex-basis: 48%;
+}
+
+.clasificaciones h2 {
+    border-bottom: 2px solid #0077c2;
+    padding-bottom: 10px;
+}
+
+.clasificaciones ul {
+    list-style: none;
+    padding: 0;
+}
+
+.clasificaciones ul li {
+    margin-bottom: 10px;
+}
+
+.clasificaciones ul li a {
+    color: #4a148c;
+    text-decoration: none;
+}
+
+.aviso{
+    text-align: center;
+    padding: 200px;
+    font-size: large;
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px 0;
+    text-align: center;
+    background-color: #000;
+    color: #ffffff;
+}
+
+footer div {
+    flex: 1;
+    padding: 10px;
+}
+
+footer .copyright {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer .copyright img {
+    width: 20px;
+    margin-right: 8px;
+}
+
+footer .redes p{
+    padding: 10px;
+}
+
+footer .redes ul{
+    list-style: none;
+    padding: 50;
+    display: flex;
+    gap: 25px;
+}
+
+footer .redes ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    margin: 20px;
+}
+
+@media (max-width: 768px) {
+    header, footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav {
+        margin-top: 10px;
+    }
+
+    header .login {
+        margin-top: 10px;
+    }
+
+    .contenido {
+        margin: 10px;
+    }
+}

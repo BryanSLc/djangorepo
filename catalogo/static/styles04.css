@@ -1,0 +1,238 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e6f0f3;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-bottom: 2px solid #000000;
+}
+
+header .logo img {
+    width: 50px;
+}
+
+header .menu {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+header nav {
+    display: flex;
+    gap: 15px; 
+}
+
+header nav a {
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+}
+
+header .search-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header .search-bar input[type="text"]{
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    margin-right: 300px;
+    display: flex;
+}
+
+header .search-bar img{
+    width: 24px;
+    padding-left: 100px;
+    margin-left: 10px;
+}
+
+
+.login {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 10px;
+}
+
+.login-button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #000000;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #000000;
+}
+.content {
+    padding: 20px;
+    text-align: center;
+}
+
+.catalogo-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 30px;
+}
+
+.catalogo-card {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: left;
+}
+
+.catalogo-card h2 {
+    margin-top: 0;
+    color: #007973b9;
+}
+
+.catalogo-card p {
+    margin: 5px 0;
+}
+
+.catalogo-card .btn {
+    display: inline-block;
+    padding: 10px 15px;
+    margin-top: 10px;
+    color: rgb(255, 255, 255);
+    background-color: #165153;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.catalogo-card .btn:hover {
+    background-color: #004d40;
+}
+
+.reciente-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.reciente-items .item {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: left;
+}
+
+.reciente-items .item h3 {
+    margin-top: 0;
+    color: #007973b9;
+}
+
+.reciente-items .item p {
+    margin: 5px 0;
+}
+
+.reciente-items .item .btn-ver-detalles {
+    display: inline-block;
+    padding: 10px 15px;
+    margin-top: 10px;
+    color: rgb(255, 255, 255);
+    background-color: #165153;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.reciente-items .item .btn-ver-detalles:hover {
+    background-color: #004d40;
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px 0;
+    text-align: center;
+    background-color: #000;
+    color: #ffffff;
+}
+
+footer .copyright {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer .copyright img {
+    width: 20px;
+    margin-right: 8px;
+}
+
+footer .info {
+    flex: 1;
+    padding: 10px;
+}
+
+footer .info p {
+    padding: 10px;
+}
+
+footer .redes {
+    padding: 10px;
+}
+
+footer .redes p {
+    padding: 10px;
+}
+
+footer .redes ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 25px;
+}
+
+footer .redes ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+@media (max-width: 768px) {
+    header, footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav {
+        margin-top: 10px;
+    }
+
+    header .login {
+        margin-top: 10px;
+    }
+}

@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Perfil de usuario</title>
+        <link rel="stylesheet" href="{% static 'styles06.css' %}">
+        <link rel="shortcut icon" href="{% static 'logo.png' %}"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    </head>
+<body>
+    <header>
+    <div class="logo">
+        <a href="{% url 'inicio' %}">
+            <img src="{% static 'logo.png' %}" alt="Logo">
+        </a>
+    </div>
+
+    <div class="menu">
+        <nav>
+            <a href="{% url 'home' %}">Inicio</a>
+            <a href="{% url 'catalogosuser' %}">Catalogo</a>
+            <a href="{% url 'categorias_por_calificacion' %}">Clasificacion</a>
+            <a href="{% url 'reciente' %}">Reciente</a>
+            <a href="{% url 'foro' %}">Foro</a>
+        </nav>
+    </div>
+
+    <div class="search-bar">
+        <img src="{% static 'buscar.jpg' %}" alt="">
+        <input type="text" placeholder="Buscar...">
+    </div>
+
+    <div class="perfil">
+        <a href="{% url 'perfil' %}" class="perfil-button">Perfil</a>
+        <a href="{% url 'logout' %}" class="perfil-button">Cerrar sesion</a>
+    </div>
+    </header>
+
+    <div class="perfill">
+        <h1>Perfil de {{ usuario.nombre }}</h1>
+        <p>Email: {{ usuario.email }}</p>
+        <p>Fecha de Creación: {{ usuario.fecha_creacion }}</p>
+
+        <h2>Cambiar Nombre de Usuario</h2>
+        <form method="get" action="">
+            <button type="submit" name="show_form" value="true" class="btn-mostrar-form">Cambiar Nombre</button>
+        </form>
+
+        {% if show_form %}
+        <form method="post" class="cambiar-nombre-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn-cambiar-nombre">Cambiar Nombre</button>
+        </form>
+        {% endif %}
+
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+
+    <footer>
+        <div class="copyright">
+            <img src="{% static 'copyright.jpg' %}" alt="">
+            <p> 2024 Entertaiment</p>
+        </div>
+        <div class="info">
+            <p>Nuestra pagina web brinda a todos los usuarios contenido en
+                linea del mundo del entretenimiento.
+            </p>
+        </div>
+        <div class="redes">
+            <p>Visita nuestras redes sociales.</p>
+            <ul>
+                <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                <li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

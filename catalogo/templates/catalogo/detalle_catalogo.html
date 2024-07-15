@@ -1,0 +1,130 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Entertaiment - Pagina principal</title>
+    <link rel="stylesheet" href="{% static 'styles02.css' %}">
+    <link rel="shortcut icon" href="{% static 'logo.png' %}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+</head>
+<body>
+    <header>
+
+    <div class="logo">
+        <a href="{% url 'inicio' %}">
+            <img src="{% static 'logo.png' %}" alt="Logo">
+        </a>
+    </div>
+
+    <div class="menu">
+        <nav>
+            <a href="{% url 'inicio' %}">Inicio</a>
+            <a href="{% url 'catalogos' %}">Catalogo</a>
+            <a href="{% url 'categorias_por_calificacion' %}">Clasificacion</a>
+            <a href="{% url 'reciente' %}">Reciente</a>
+            <a href="{% url 'foros' %}">Foro</a>
+        </nav>
+    </div>
+    <div class="search-bar">
+        <img src="{% static 'buscar.jpg' %}" alt="">
+        <input type="text" placeholder="Buscar...">
+    </div>
+    <div class="login">
+        <a href="{% url 'login' %}" class="login-button">Iniciar sesión</a>
+        <a href="{% url 'register' %}" class="login-button">Registrate</a>
+    </div>
+    </header>
+
+    <div class="content">
+        <h1>{{ catalogo.titulo }}</h1>
+        <div class="detalles-card">
+            <p><strong>Título:</strong> {{ catalogo.titulo }}</p>
+            <p><strong>Director:</strong> {{ catalogo.director }}</p>
+            <p><strong>Tipo:</strong> {{ catalogo.tipo }}</p>
+            <p><strong>Genero:</strong> {{ catalogo.genero }}</p>
+        </div>
+        <div class="detalles-sinopsis">
+            <h2>Sinopsis y Detalles</h2>
+            <ul>
+                {% for detalle in detalles %}
+                    <li>
+                        <strong>Fecha de lanzamiento:</strong> {{ detalle.fecha_lanzamiento }} <br>
+                        <strong>Sinopsis:</strong> {{ detalle.sinopsis }} <br>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+   
+    <div class="detalles-catalogo">
+        <h1>Reseñas</h1>
+        <div class="calificacion-promedio">
+            <span class="promedio">{{ promedio_calificacion|floatformat:1 }} ★★★</span>
+            <span class="reviews">({{ total_reviews }} reviews)</span>
+        </div>
+        <div class="recuento-estrellas">
+            <div>5 ★ ({{ count_5 }})</div>
+            <div>4 ★ ({{ count_4 }})</div>
+            <div>3 ★ ({{ count_3 }})</div>
+            <div>2 ★ ({{ count_2 }})</div>
+            <div>1 ★ ({{ count_1 }})</div>
+        </div>
+        <h2>Comentarios</h2>
+        {% if user.is_authenticated %}
+        <form method="post">
+            {% csrf_token %}
+            <textarea name="comentario" placeholder="Ingresa tu comentario"></textarea>
+            <div class="calificacion">
+                <span>Calificación: </span>
+                <div class="estrellas">
+                    <input type="radio" name="calificacion" value="5" id="star5"><label for="star5">★</label>
+                    <input type="radio" name="calificacion" value="4" id="star4"><label for="star4">★</label>
+                    <input type="radio" name="calificacion" value="3" id="star3"><label for="star3">★</label>
+                    <input type="radio" name="calificacion" value="2" id="star2"><label for="star2">★</label>
+                    <input type="radio" name="calificacion" value="1" id="star1"><label for="star1">★</label>
+                </div>
+            </div>
+            <button type="submit">Añadir comentario</button>
+        </form>
+        {% else %}
+            <p>Debe <a href="{% url 'login' %}">iniciar sesión</a> para dejar un comentario.</p>
+        {% endif %}
+        <div class="comentarios">
+            <ul>
+                {% for comentario in comentarios %}
+                    <li>
+                        <div class="comentario-header">
+                            <span>{{ comentario.usuario.nombre }}</span>
+                            <span class="calificacion">{{ comentario.calificacion }} ★</span>
+                            <span class="fecha">{{ comentario.fecha|date:"d/m/Y H:i" }}</span>
+                        </div>
+                        <p>{{ comentario.comentario }}</p>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <div class="copyright">
+            <img src="{% static 'copyright.jpg' %}" alt="">
+            <p> 2024 Entertaiment</p>
+        </div>
+        <div class="info">
+            <p>Nuestra pagina web brinda a todos los usuarios contenido en
+                linea del mundo del entretenimiento.
+            </p>
+        </div>
+        <div class="redes">
+            <p>Visita nuestras redes sociales.</p>
+            <ul>
+                <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                <li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
